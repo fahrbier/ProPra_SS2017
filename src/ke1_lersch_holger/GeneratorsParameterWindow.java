@@ -10,6 +10,8 @@ import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -38,10 +40,12 @@ public class GeneratorsParameterWindow {
         KE1_Lersch_Holger.setStatus("ready");
         
         //-- Parameter Height 
-        //-- todo
+        Label heightLabel = new Label("Enter height:");
+        TextField heightInput = new TextField();
         
         //-- Parameter Width
-        //-- todo
+        Label widthLabel = new Label("Enter width:");
+        TextField widthInput = new TextField();
         
         //-- Generate Button
         Button generateButton = new Button("Generate");
@@ -49,7 +53,7 @@ public class GeneratorsParameterWindow {
             @Override
             public void handle(ActionEvent event) {
                 KE1_Lersch_Holger.setStatus("calculating");  
-                //-- implement create canvas, draw cirlce
+                //-- implement validate input, create canvas, draw cirlce
                 //-- todo
                 
                 window.close();
@@ -61,7 +65,7 @@ public class GeneratorsParameterWindow {
         VBox layout = new VBox(15);
         layout.setAlignment(Pos.CENTER);
         
-        layout.getChildren().add(generateButton);
+        layout.getChildren().addAll(heightLabel, heightInput, widthLabel,widthInput, generateButton);
         
         Scene sceneSimpleGeneratorsParameter = new Scene(layout);
         
