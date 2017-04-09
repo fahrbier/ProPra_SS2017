@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.canvas.*?>
+
+<BorderPane prefHeight="400.0" 
+            prefWidth="600.0" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="ke1_lersch_holger.MainUiController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                   <items>
+                       <MenuItem text="Save Image"/>
+                       <MenuItem text="Quit" onAction="#onQuit" />
+                   </items>
+                </Menu>
+                <Menu text="Generators">
+                    <items>
+                        <MenuItem text="Simple Generator"  onAction="#onSimpleGenerator"/>                       
+                    </items>
+                </Menu>
+                
+            </MenuBar>
+        </VBox>
+    </top>
+    <bottom>
+        <Label fx:id="statusText"></Label>
+    </bottom>
+    <center>
+        
+        <Canvas></Canvas>
+        
+    </center>
+</BorderPane>

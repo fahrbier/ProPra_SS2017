@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="100" 
+            prefWidth="200" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="ke1_lersch_holger.SimpleGeneratorParameterController">
+    <VBox>
+        <Label text="Enter width:"></Label>
+        <TextField fx:id="width"></TextField>
+        
+        <Label text="Enter height"></Label>
+        <TextField fx:id="height"></TextField>  
+        
+        <Button text="Generate"></Button>      
+    </VBox>
+</AnchorPane>
