@@ -6,6 +6,7 @@
 package ke1_lersch_holger;
 
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
 import javafx.scene.control.TextField;
 
 
@@ -17,10 +18,21 @@ import javafx.scene.control.TextField;
  */
 public class SimpleGeneratorParameterController {
 
+    private MainUiController mainUi;
+    
     @FXML
     private TextField width;
     
     @FXML 
     private TextField height;
+    
+    public void onGenerate(){
+
+        mainUi.setStatusText("calculating");
+    }
+    
+    public void init(MainUiController mainUi) {
+        this.mainUi = mainUi;
+    }
     
 }

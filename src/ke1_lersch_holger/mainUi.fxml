@@ -22,7 +22,7 @@
                 </Menu>
                 <Menu text="Generators">
                     <items>
-                        <MenuItem text="Simple Generator"  onAction="#onSimpleGenerator"/>                       
+                        <MenuItem text="Simple Generator" onAction="#onSimpleGenerator"/>                       
                     </items>
                 </Menu>
                 

@@ -16,6 +16,7 @@ import javafx.stage.Stage;
  */
 public class KE1_Lersch_Holger extends Application {
     
+    
     /**
      * @param args the command line arguments
      */
@@ -25,11 +26,10 @@ public class KE1_Lersch_Holger extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("mainUi.fxml"))));
-        
-        
+        Scene mainScene = new Scene(FXMLLoader.load(getClass().getResource("mainUi.fxml")));
+        stage.setScene(mainScene);
         stage.show();
     }
+    
     
 }

@@ -17,6 +17,6 @@
         <Label text="Enter height"></Label>
         <TextField fx:id="height"></TextField>  
         
-        <Button text="Generate"></Button>      
+        <Button text="Generate" onAction="#onGenerate"></Button>      
     </VBox>
 </AnchorPane>
