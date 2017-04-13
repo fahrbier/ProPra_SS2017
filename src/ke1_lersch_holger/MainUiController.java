@@ -34,23 +34,27 @@ public class MainUiController  {
     @FXML
     public void initialize(){
         System.out.println("App started.");
-        //-- connect other windows (hence controller) to the main one to exchange data
-        //-- tightly coupled, though. We could look into a different pattern later like
-        //-- event bus or something like that.
-        
-        simpleGeneratorParameter.init(this);
     }
     
     
     
     public void onSimpleGenerator() {
         try{
-            
-            Scene parameterScene = new Scene(FXMLLoader.load(getClass().getResource("simpleGeneratorParameter.fxml")));
+            FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                    "simpleGeneratorParameter.fxml"
+                )    
+            );
+            Scene parameterScene = new Scene(loader.load());
             
             Stage stage = new Stage();
             stage.setTitle("Simple Generator");
             stage.setScene(parameterScene);  
+            
+            //-- after the popup was created, we call an init method in its controller to handover 
+            //-- the MainUiController (this) to it to be able to exchange data between the two objects
+            simpleGeneratorParameter = loader.<SimpleGeneratorParameterController>getController();
+            simpleGeneratorParameter.init(this);
             stage.show();
         }
         catch (IOException e) {
