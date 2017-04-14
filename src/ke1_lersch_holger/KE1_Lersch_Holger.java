@@ -16,6 +16,7 @@ import javafx.stage.Stage;
  */
 public class KE1_Lersch_Holger extends Application {
     
+    private MainUiController mainUiController;
     
     /**
      * @param args the command line arguments
@@ -26,9 +27,24 @@ public class KE1_Lersch_Holger extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Scene mainScene = new Scene(FXMLLoader.load(getClass().getResource("mainUi.fxml")));
-        stage.setScene(mainScene);
-        stage.show();
+
+            FXMLLoader loader = new FXMLLoader(
+                getClass().getResource(
+                    "mainUi.fxml"
+                )    
+            );
+            Scene mainScene = new Scene(loader.load());
+            
+            Stage mainUiStage = new Stage();
+            mainUiStage.setTitle("Simple Generator");
+            mainUiStage.setScene(mainScene);  
+            
+            //-- we need the state in the controller later. 
+            mainUiController = loader.<MainUiController>getController();
+            mainUiController.setMainUiStage(stage);
+            mainUiStage.show();        
+        
+        
     }
     
     
