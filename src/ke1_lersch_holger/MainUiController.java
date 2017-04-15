@@ -49,26 +49,8 @@ public class MainUiController extends Window  {
     
     
     public void onSimpleGenerator() {
-        try{
-            FXMLLoader loader = new FXMLLoader(
-                getClass().getResource(
-                    "simpleGeneratorParameter.fxml"
-                )    
-            );
-            Scene parameterScene = new Scene(loader.load());
-            
-            Stage generatorStage = new Stage();
-            generatorStage.setTitle("Simple Generator");
-            generatorStage.setScene(parameterScene);  
-            
-            //-- after the popup was created, we call an init method in its controller to handover 
-            //-- the MainUiController (this) to it to be able to exchange data between the two objects
-            simpleGeneratorParameter = loader.<SimpleGeneratorParameterController>getController();
-            simpleGeneratorParameter.init(this);
-            generatorStage.show();
-        }
-        catch (IOException e) {
-        }
+        SimpleGeneratorParameter simpleGenerator = SimpleGeneratorParameter.getInstance();
+        simpleGenerator.show(this);
     }
     
     public void setStatusText(String text) {

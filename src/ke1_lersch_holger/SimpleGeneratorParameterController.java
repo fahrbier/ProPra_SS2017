@@ -6,8 +6,10 @@
 package ke1_lersch_holger;
 
 import javafx.fxml.FXML;
-import javafx.scene.Parent;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
 
 
 
@@ -16,9 +18,9 @@ import javafx.scene.control.TextField;
  *
  * @author holger
  */
-public class SimpleGeneratorParameterController {
+public class SimpleGeneratorParameterController extends Window {
 
-    private MainUiController mainUi;
+    private MainUiController mainUiController;
     
     @FXML
     private TextField width;
@@ -26,13 +28,23 @@ public class SimpleGeneratorParameterController {
     @FXML 
     private TextField height;
     
+    
     public void onGenerate(){
 
-        mainUi.setStatusText("calculating");
+        /*Canvas image = mainUiController.getGeneratedImage();
+        image.setHeight(Double.parseDouble(this.height.getText()));
+        image.setWidth(Double.parseDouble(this.width.getText()));
+        GraphicsContext gc = image.getGraphicsContext2D();
+ 
+        gc.setFill(Color.BLUE);
+        gc.fillRect(75,75,100,100);        
+        */
+        //-- send a message back to the MainUi and tell the status  
+        mainUiController.setStatusText("calculating");
     }
     
-    public void init(MainUiController mainUi) {
-        this.mainUi = mainUi;
+    public void setMainUiController(MainUiController mainUiController) {
+        this.mainUiController = mainUiController;
     }
     
 }

@@ -39,7 +39,7 @@ public class KE1_Lersch_Holger extends Application {
             mainUiStage.setTitle("Simple Generator");
             mainUiStage.setScene(mainScene);  
             
-            //-- we need the state in the controller later. 
+            //-- we need the state in the controller later to open the file dialog. 
             mainUiController = loader.<MainUiController>getController();
             mainUiController.setMainUiStage(stage);
             mainUiStage.show();        
