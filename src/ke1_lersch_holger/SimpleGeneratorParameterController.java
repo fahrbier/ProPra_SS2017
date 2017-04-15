@@ -6,8 +6,6 @@
 package ke1_lersch_holger;
 
 import javafx.fxml.FXML;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 
@@ -21,6 +19,11 @@ import javafx.scene.paint.Color;
 public class SimpleGeneratorParameterController extends Window {
 
     private MainUiController mainUiController;
+    public void setMainUiController(MainUiController mainUiController) {
+        this.mainUiController = mainUiController;
+    }
+
+
     
     @FXML
     private TextField width;
@@ -28,23 +31,23 @@ public class SimpleGeneratorParameterController extends Window {
     @FXML 
     private TextField height;
     
+    /*
+    * Event Handler / Actions of this Controller
+    *
+    */
     
     public void onGenerate(){
 
-        /*Canvas image = mainUiController.getGeneratedImage();
-        image.setHeight(Double.parseDouble(this.height.getText()));
-        image.setWidth(Double.parseDouble(this.width.getText()));
-        GraphicsContext gc = image.getGraphicsContext2D();
- 
-        gc.setFill(Color.BLUE);
-        gc.fillRect(75,75,100,100);        
-        */
-        //-- send a message back to the MainUi and tell the status  
+        this.mainUiController.setHeight(Integer.parseInt(this.height.getText()));
+        this.mainUiController.setWidth(Integer.parseInt(this.height.getText()));
+        int diameter = (this.mainUiController.getWidth()<this.mainUiController.getHeight())? this.mainUiController.getWidth() : this.mainUiController.getHeight(); 
+        
+        //-- manipulate graphicscontext
+        this.mainUiController.getGraphicsContext().setFill(Color.BLUE);        
+        this.mainUiController.getGraphicsContext().fillOval(0, 0, diameter, diameter);    
+         
         mainUiController.setStatusText("calculating");
     }
     
-    public void setMainUiController(MainUiController mainUiController) {
-        this.mainUiController = mainUiController;
-    }
-    
+ 
 }
