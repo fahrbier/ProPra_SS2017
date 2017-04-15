@@ -109,6 +109,8 @@ public class MainUiController extends Window  {
     
     public void initialize(){
         System.out.println("App started.");
+        System.out.println("Extract and save GraphicsContext from Canvas.");
+        this.graficsContext = this.generatedImage.getGraphicsContext2D();
     }
 
     

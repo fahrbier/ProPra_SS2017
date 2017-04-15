@@ -20,15 +20,14 @@ public abstract class Window {
         if (fileName == null) {
             FileChooser fileChooser = new FileChooser();
   
-              //Set extension filter
-              FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("TXT files (*.txt)", "*.txt");
-              fileChooser.getExtensionFilters().add(extFilter);
+            //Set extension filter
+            FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("PNG files (*.png)", "*.png");
+            fileChooser.getExtensionFilters().add(extFilter);
               
-              //Show save file dialog
-              File file = fileChooser.showSaveDialog(stage);    
+            //Show save file dialog
+            File file = fileChooser.showSaveDialog(stage);    
         }
-        
-        
+                
         System.out.println("Writing file " + fileName + " to file.");
         
         
