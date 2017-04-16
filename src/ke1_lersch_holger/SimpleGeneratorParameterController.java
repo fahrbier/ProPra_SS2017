@@ -66,9 +66,9 @@ public class SimpleGeneratorParameterController extends Window {
        
         if (inputOk) {
             
-            this.mainUiController.setHeight(Integer.parseInt(this.height.getText()));
-            this.mainUiController.setWidth(Integer.parseInt(this.width.getText()));
-            int diameter = (this.mainUiController.getWidth()<this.mainUiController.getHeight())? this.mainUiController.getWidth() : this.mainUiController.getHeight(); 
+            this.mainUiController.setHeight(Integer.parseInt(inputHeight));
+            this.mainUiController.setWidth(Integer.parseInt(inputWidth));
+            int diameter = (this.mainUiController.getWidth() > this.mainUiController.getHeight())? this.mainUiController.getWidth() : this.mainUiController.getHeight(); 
 
             //-- resize canvas
             this.mainUiController.getGeneratedImage().setHeight(diameter);
