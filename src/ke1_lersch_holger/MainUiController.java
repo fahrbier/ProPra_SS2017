@@ -98,6 +98,7 @@ public class MainUiController extends Window  {
         catch (Exception e) {
         
         }
+        this.setStatusText("done"); //-- fertig
     }
     
     
@@ -113,6 +114,8 @@ public class MainUiController extends Window  {
     
     public void initialize(){
         System.out.println("App started.");
+        
+        this.setStatusText("ready"); //--bereit
         
         System.out.println("Extract and save GraphicsContext from Canvas.");
         this.graficsContext = this.generatedImage.getGraphicsContext2D();

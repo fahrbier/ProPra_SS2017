@@ -6,17 +6,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="100" 
-            prefWidth="200" 
+<AnchorPane prefHeight="150" 
+            prefWidth="250" 
             xmlns:fx="http://javafx.com/fxml/1" 
             fx:controller="ke1_lersch_holger.SimpleGeneratorParameterController">
     <VBox>
         <Label text="Enter width:"></Label>
         <TextField fx:id="width"></TextField>
+        <Label fx:id="widthError" ></Label>
         
         <Label text="Enter height"></Label>
         <TextField fx:id="height"></TextField>  
+        <Label fx:id="heightError" ></Label>
         
-        <Button text="Generate" onAction="#onGenerate"></Button>      
+        <Button fx:id="onGenerate" text="Generate" onAction="#onGenerate"></Button>      
     </VBox>
 </AnchorPane>
